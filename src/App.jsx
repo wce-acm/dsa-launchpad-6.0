@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Background from './components/Background'
 import Landing from './components/Landing'
+import RegistrationForm from './components/RegistrationForm'
+// import RegistrationForm from './components/RegistrationForm'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +14,7 @@ function App() {
     <>
      <Background>
       <Landing />
+      <RegistrationForm/>
      </Background>
     </>
   )
