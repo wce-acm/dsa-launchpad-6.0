@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import PGTLogo from '../assets/images/PGT.png';
-import WCElogo from '../assets/images/WCE.png';
+import PGTLogo from '../assets/images/wce.webp';
+import WCElogo from '../assets/images/acmlogo.png';
 
 const Coin = ({ logo, alt, className, delay }) => {
   return (
@@ -33,20 +33,21 @@ const Coin = ({ logo, alt, className, delay }) => {
       }}
     >
       {/* Rope */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2">
-        <div className="rope relative w-1 h-32 bg-amber-900 z-30">
-          <div className="absolute top-0 left-0 w-full h-full">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute left-0 w-full h-0.5 bg-amber-700"
-                style={{ top: `${i * 25}%` }}
-              />
-            ))}
-          </div>
-          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-amber-800 rounded-full"></div>
-        </div>
-      </div>
+<div className="absolute -top-32 left-1/2 -translate-x-1/2">
+  <div className="rope relative w-1 h-32 bg-gradient-to-b from-yellow-400 via-yellow-500 to-yellow-600 shadow-[0_0_10px_rgba(255,215,0,0.6)] z-30">
+    <div className="absolute top-0 left-0 w-full h-full">
+      {[...Array(5)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute left-0 w-full h-0.5 bg-yellow-400"
+          style={{ top: `${i * 25}%` }}
+        />
+      ))}
+    </div>
+    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-yellow-500 rounded-full shadow-[0_0_8px_rgba(255,215,0,0.8)]"></div>
+  </div>
+</div>
+
 
       {/* Coin */}
       <div className="w-full h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
@@ -64,15 +65,15 @@ const Coin = ({ logo, alt, className, delay }) => {
     </motion.div>
   );
 };
-
 export default function CoinDemo() {
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
       {/* WCE Coin */}
-      <Coin logo={WCElogo} alt="WCE Logo" className="left-2 top-20 w-48 h-48" delay={0} />
-      
+      <Coin logo={WCElogo} alt="WCE Logo" className="left-10 top-20 w-48 h-48" delay={0} />
+
       {/* PGT Coin */}
-      <Coin logo={PGTLogo} alt="PGT Logo" className="right-2 top-20 w-48 h-48" delay={1} />
+      <Coin logo={PGTLogo} alt="PGT Logo" className="right-10 top-20 w-48 h-48" delay={1} />
     </div>
   );
+
 }
