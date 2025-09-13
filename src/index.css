@@ -442,3 +442,14 @@ textarea {
     transform: translate(-50%, -40%) scale(1);
   }
 }
+
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
