@@ -9,7 +9,6 @@ import RegistrationForm from './components/RegistrationForm'
 import HarryPotterCard from './components/Card'
 import SessionCard from './components/Session'
 import Particles from './components/ui/Particles'
-
 function App() {
   const [count, setCount] = useState(0)
 
