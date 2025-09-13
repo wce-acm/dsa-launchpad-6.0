@@ -8,8 +8,42 @@ import three from "../assets/images/three.png";
 import four from "../assets/images/four.png";
 
 const SessionCard = () => {
-  const cards = [1, 2, 3, 4];
-  const logos = [one1, two, three, four]; 
+  const cards = [
+    {
+      title: "Welcome to Hogwarts",
+      subtitle: "Session 1",
+      house: "Day 1",
+      crestIcon: "⚡",
+      backText:
+        "Begin your DSA adventure by learning problem-solving, logic, and simple data-handling spells to tackle coding challenges.",
+    },
+    {
+      title: "The Chamber of Algorithms",
+      subtitle: "Session 2",
+      house: "Day 1",
+      crestIcon: "🦡",
+      backText:
+        "Unlock the secrets of searching, sorting, and stack magic to organize data and conquer problems efficiently.",
+    },
+    {
+      title: "The Order of Structures",
+      subtitle: "Session 3",
+      house: "Day 2",
+      crestIcon: "🦁",
+      backText:
+        "Master linked sequences and structured data flows to control information with wizard-like precision.",
+    },
+    {
+      title: "Defence Against the Dark Arts",
+      subtitle: "Session 4",
+      house: "Day 2",
+      crestIcon: "🦅",
+      backText:
+        "Explore trees, graphs, and hidden paths to navigate complex hierarchies and unlock advanced DSA powers.",
+    },
+  ];
+
+  const logos = [one1, two, three, four];
 
   return (
     <div className="relative flex flex-col items-center">
@@ -42,10 +76,16 @@ const SessionCard = () => {
             {/* Connector circle */}
             <div className="absolute top-1/2 left-1/2 w-6 h-6 bg-amber-600 border-4 border-amber-900 rounded-full -translate-x-1/2 -translate-y-1/2 z-20" />
 
-            {/* The card itself */}
-            <HarryPotterCard />
+            {/* The card itself with props */}
+            <HarryPotterCard
+              title={card.title}
+              subtitle={card.subtitle}
+              house={card.house}
+              crestIcon={card.crestIcon}
+              backText={card.backText}
+            />
 
-            {/* The logo (absolute, opposite to card) */}
+            {/* The logo (opposite to card) */}
             <img
               src={logos[index]}
               alt={`Logo ${index + 1}`}
