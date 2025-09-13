@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import registrationLogo from "../assets/images/registration-logo.png";
+import registrationLogo from "../assets/images/reg2.png";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +30,7 @@ const RegistrationForm = () => {
         className="w-full max-w-lg rounded-xl p-10 space-y-16"
       >
         {/* Registration Image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center" style={{marginTop:"50px"}}>
           <img
             src={registrationLogo}
             alt="Registration"
@@ -124,17 +124,19 @@ const RegistrationForm = () => {
             alt="Payment QR"
             className="w-80 h-80 mx-auto float-animation"
           />
-          <p className="text-gray-300 mt-3">₹150/- per team</p>
+          {/* <p className="text-gray-300 mt-3">₹150/- per team</p> */}
         </div>
 
         {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full py-3 rounded-lg bg-blue-600 text-white font-bold 
-                     hover:bg-blue-700 transition-all duration-200"
-        >
-          Submit
-        </button>
+     <div style={{marginBottom:"60px", marginLeft:"-20px"}}>
+  <img
+    src="./src/assets/images/submit.png"
+    alt="Payment QR"
+    className="w-56 h-56 mx-auto"
+  />
+</div>
+
+
       </form>
     </div>
   );

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from "react";
 import "./App.css";
 import Background from "./components/Background";
@@ -7,20 +6,6 @@ import RegistrationForm from "./components/RegistrationForm";
 import SessionCard from "./components/Session";
 import Particles from "./components/ui/Particles";
 import Footer from "./components/Footer";
-=======
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Background from './components/Background'
-import Landing from './components/Landing'
-import RegistrationForm from './components/RegistrationForm'
-import HarryPotterCard from './components/Card'
-import SessionCard from './components/Session'
-import Particles from './components/ui/Particles'
-function App() {
-  const [count, setCount] = useState(0)
->>>>>>> 125e025f72861ff7c75aaeda1528cb1e4a2fb2d7
 
 function App() {
   return (

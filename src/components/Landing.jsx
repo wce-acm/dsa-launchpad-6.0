@@ -5,7 +5,7 @@ import Bird3D from "./Bird3D";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
 // import heading from "../assets/images/heading.png";
-import heading from "../assets/images/dsa-logo.png";
+import heading from "../assets/images/logo2.png";
 import CoinDemo from "./CoinDemo";
 
 const Landing = () => {
@@ -27,9 +27,10 @@ const Landing = () => {
       </div>
    <div className="relative z-30 flex flex-col items-center justify-center text-center px-4">
 <img
+style={{marginTop:"60px"}}
   src={heading}
   alt="DSA Launchpad"
-  className="w-[700px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px]"
+  className="w-[350px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px] "
 />
 
 
