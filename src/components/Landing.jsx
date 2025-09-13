@@ -15,7 +15,7 @@ const Landing = () => {
       <div className="absolute inset-0 z-10">
         <Particles
           particleColors={["#ffffff", "#f6f4f1", "#f3f1ea"]}
-          particleCount={300}
+          particleCount={200}
           particleSpread={10}
           speed={0.1}
           particleBaseSize={160}

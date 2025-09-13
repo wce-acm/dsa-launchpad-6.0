@@ -69,10 +69,10 @@ export default function CoinDemo() {
   return (
     <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
       {/* WCE Coin */}
-      <Coin logo={WCElogo} alt="WCE Logo" className="left-10 top-20 w-48 h-48" delay={0} />
+      <Coin logo={WCElogo} alt="WCE Logo" className="left-5 top-20 w-48 h-48" delay={0} />
 
       {/* PGT Coin */}
-      <Coin logo={PGTLogo} alt="PGT Logo" className="right-10 top-20 w-48 h-48" delay={1} />
+      <Coin logo={PGTLogo} alt="PGT Logo" className="right-5 top-20 w-48 h-48" delay={1} />
     </div>
   );
 
