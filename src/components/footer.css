@@ -1,0 +1,42 @@
+footer {
+	color: white;
+	padding: 20px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+    background: #000;
+}
+
+footer img {
+	width: 100px;
+}
+
+.copyright_text {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.copyright_text span {
+	font-family: var(--main-font);
+	font-weight: 500;
+}
+
+@media screen and (max-width: 1000px) {
+	footer {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	footer img {
+		width: 80px;
+
+	}
+
+	.copyright_text {
+		text-align: center;
+		font-size: 14px;
+		gap: 0;
+	}
+}
