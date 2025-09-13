@@ -4,7 +4,8 @@ import Particles from "./ui/Particles";
 import Bird3D from "./Bird3D";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
-import heading from "../assets/images/heading1.png";
+// import heading from "../assets/images/heading.png";
+import heading from "../assets/images/dsa-logo.png";
 import CoinDemo from "./CoinDemo";
 
 const Landing = () => {
@@ -25,12 +26,12 @@ const Landing = () => {
         />
       </div>
    <div className="relative z-30 flex flex-col items-center justify-center text-center px-4">
-  <img
-    src={heading}
-    alt="DSA Launchpad"
-    className="w-[480px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px]" 
-    // bigger negative margin to pull 3D closer
-  />
+<img
+  src={heading}
+  alt="DSA Launchpad"
+  className="w-[700px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px]"
+/>
+
 
   {/* 3D Scene */}
   <div className="w-[450px] h-[450px] relative -mt-16 z-20">

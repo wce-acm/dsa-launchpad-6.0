@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import registrationLogo from "../assets/images/registration-logo.png";
+
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -26,11 +28,19 @@ const RegistrationForm = () => {
     <div className="min-h-screen flex items-center justify-center px-4">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-lg rounded-xl shadow-lg p-10 space-y-6 backdrop-blur-md"
+        className="w-full max-w-lg rounded-xl p-10 space-y-6" // ⬅ removed shadow & backdrop-blur
       >
-        <h2 className="text-3xl font-bold text-center text-white mb-6">
-          Registration Form
-        </h2>
+        {/* Registration Image */}
+        <div className="flex justify-center mb-4">
+          <img
+            src={registrationLogo}
+            alt="Registration"
+            className="w-[1500px] h-[1500px] object-contain mx-auto"
+          />
+
+
+
+        </div>
 
         {/* Full Name */}
         <div>
@@ -40,7 +50,7 @@ const RegistrationForm = () => {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter your full name"
             required
           />
@@ -54,7 +64,7 @@ const RegistrationForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter your email"
             required
           />
@@ -68,7 +78,7 @@ const RegistrationForm = () => {
             name="mobile"
             value={formData.mobile}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter your mobile number"
             required
           />
@@ -82,7 +92,7 @@ const RegistrationForm = () => {
             name="college"
             value={formData.college}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter your college"
             required
           />
@@ -96,7 +106,7 @@ const RegistrationForm = () => {
             name="branch"
             value={formData.branch}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter your branch"
             required
           />
@@ -109,7 +119,7 @@ const RegistrationForm = () => {
             name="year"
             value={formData.year}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           >
             <option value="">Select Year</option>
@@ -128,7 +138,7 @@ const RegistrationForm = () => {
             name="transactionId"
             value={formData.transactionId}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter your transaction ID"
             required
           />
@@ -136,12 +146,14 @@ const RegistrationForm = () => {
 
         {/* Payment QR */}
         <div className="text-center">
-          <h4 className="text-lg text-white mb-2">Payment QR</h4>
           <img
-            src="./src/assets/images/image.png"
+            src="./src/assets/images/qrcode.png"
             alt="Payment QR"
-            className="w-44 mx-auto rounded-lg shadow-md"
+            className="w-96 h-96 mx-auto  float-animation"
           />
+
+
+
           <p className="text-gray-300 mt-3">₹150/- per team</p>
         </div>
 
