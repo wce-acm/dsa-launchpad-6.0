@@ -34,7 +34,7 @@ const RegistrationForm = () => {
           <img
             src={registrationLogo}
             alt="Registration"
-            className="w-[400px] h-auto object-contain mx-auto"
+            className="w-[400px] h-auto object-contain mx-auto floating"
           />
         </div>
 
@@ -132,7 +132,7 @@ const RegistrationForm = () => {
   <img
     src="./src/assets/images/submit.png"
     alt="Payment QR"
-    className="w-56 h-56 mx-auto"
+    className="w-45 h-45 mx-auto pressable cursor-pointer hover-zoom"
   />
 </div>
 

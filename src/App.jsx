@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useEffect } from "react";
 import "./App.css";
 import Background from "./components/Background";
 import Landing from "./components/Landing";
@@ -8,9 +8,19 @@ import Particles from "./components/ui/Particles";
 import Footer from "./components/Footer";
 
 function App() {
+  const registrationRef = useRef(null);
+
+  // Force scroll to top on mount/reload
+  useEffect(() => {
+
+     if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+   window.scrollTo({ top: 60, left: 0, behavior: "instant" });
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Main content grows */}
       <div className="flex-grow relative">
         <div className="absolute inset-0 z-10">
           <Particles
@@ -26,13 +36,19 @@ function App() {
         </div>
 
         <Background>
-          <Landing />
+          <Landing
+            onRegisterClick={() =>
+              registrationRef.current?.scrollIntoView({ behavior: "smooth" })
+            }
+          />
+
           <SessionCard />
-          <RegistrationForm />
+
+          <div ref={registrationRef}>
+            <RegistrationForm />
+          </div>
         </Background>
       </div>
-
-      {/* Footer always at bottom */}
       <Footer />
     </div>
   );

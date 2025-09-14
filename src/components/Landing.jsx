@@ -8,7 +8,7 @@ import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
 import heading from "../assets/images/logo2.png";
 import CoinDemo from "./CoinDemo";
 
-const Landing = () => {
+const Landing = ({ onRegisterClick }) => {
   return (
     <div className="relative w-full h-screen">
       <CoinDemo />
@@ -30,7 +30,7 @@ const Landing = () => {
 style={{marginTop:"60px"}}
   src={heading}
   alt="DSA Launchpad"
-  className="w-[350px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px] "
+  className="w-[350px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px] floating "
 />
 
 
@@ -45,7 +45,7 @@ style={{marginTop:"60px"}}
 
 
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-50">
-        <HoverBorderGradientDemo />
+        <HoverBorderGradientDemo  onClick={onRegisterClick}/>
       </div>
     </div>
   );

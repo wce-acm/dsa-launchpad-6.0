@@ -4,8 +4,8 @@ import Particles from "./ui/Particles";
 
 import one1 from "../assets/images/one1.png";
 import two from "../assets/images/two.png";
-import three from "../assets/images/three.png";
-import four from "../assets/images/four.png";
+import three from "../assets/images/three1.png";
+import four from "../assets/images/four1.png";
 
 const SessionCard = () => {
   const cards = [
