@@ -28,6 +28,7 @@ const RegistrationForm = () => {
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-lg rounded-xl p-10 space-y-16"
+        
       >
         {/* Registration Image */}
         <div className="flex justify-center" style={{marginTop:"50px"}}>
@@ -130,10 +131,11 @@ const RegistrationForm = () => {
         {/* Submit Button */}
      <div style={{marginBottom:"60px", marginLeft:"-20px"}}>
   <img
-    src="./src/assets/images/submit.png"
-    alt="Payment QR"
-    className="w-45 h-45 mx-auto pressable cursor-pointer hover-zoom"
-  />
+  src="./src/assets/images/submit.png"
+  alt="Submit"
+  className="w-45 h-45 mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110 active:scale-95"
+/>
+
 </div>
 
 
