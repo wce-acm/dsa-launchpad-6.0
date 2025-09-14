@@ -30,7 +30,7 @@ const Landing = ({ onRegisterClick }) => {
 style={{marginTop:"60px"}}
   src={heading}
   alt="DSA Launchpad"
-  className="w-[350px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px] floating "
+  className="w-[350px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px] "
 />
 
 
