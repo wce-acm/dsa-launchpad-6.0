@@ -477,3 +477,32 @@ textarea {
 .pressable:active {
   transform: scale(0.9);
 }
+
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04); /* Slight zoom in */
+  }
+}
+
+.fade-zoom-out {
+  opacity: 1;
+  transform: scale(3);
+  animation: fadeZoomFull 2s linear forwards; /* linear for constant speed */
+}
+
+@keyframes fadeZoomFull {
+  0%   { opacity: 1; transform: scale(3); }
+  10%  { opacity: 0.98; transform: scale(3.5); }
+  20%  { opacity: 0.96; transform: scale(4); }
+  30%  { opacity: 0.93; transform: scale(4.5); }
+  40%  { opacity: 0.9; transform: scale(5); }
+  50%  { opacity: 0.85; transform: scale(5.5); }
+  60%  { opacity: 0.75; transform: scale(6); }
+  70%  { opacity: 0.6; transform: scale(6.5); }
+  80%  { opacity: 0.4; transform: scale(7); }
+  90%  { opacity: 0.2; transform: scale(7.5); }
+  100% { opacity: 0; transform: scale(8); }
+}

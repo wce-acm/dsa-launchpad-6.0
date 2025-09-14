@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import "./App.css";
 import Background from "./components/Background";
 import Landing from "./components/Landing";
@@ -6,18 +6,35 @@ import RegistrationForm from "./components/RegistrationForm";
 import SessionCard from "./components/Session";
 import Particles from "./components/ui/Particles";
 import Footer from "./components/Footer";
+import loaderImage from "./assets/images/acmlogo.png"; // Replace with your image
 
 function App() {
   const registrationRef = useRef(null);
+  const [loading, setLoading] = useState(true);
 
-  // Force scroll to top on mount/reload
   useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
-     if ("scrollRestoration" in window.history) {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
-   window.scrollTo({ top: 60, left: 0, behavior: "instant" });
+    window.scrollTo({ top: 60, left: 0, behavior: "instant" });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+        <img
+          src={loaderImage}
+          alt="Loading..."
+          className="w-40 h-40 fade-zoom-out"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
