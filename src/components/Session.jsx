@@ -46,7 +46,7 @@ const SessionCard = () => {
   const logos = [one1, two, three, four];
 
   return (
-    <div className="relative flex flex-col items-center">
+    <div className="relative flex flex-col items-center px-4 sm:px-8">
       {/* Background Particles */}
       <div className="absolute inset-0 z-10">
         <Particles
@@ -62,7 +62,7 @@ const SessionCard = () => {
       </div>
 
       {/* Snake line */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-amber-800 -translate-x-1/2 z-0" />
+      <div className="absolute left-1/2 top-0 bottom-0 w-[2px] sm:w-[1.5px] xs:w-[1px] bg-amber-800 -translate-x-1/2 z-0" />
 
       {cards.map((card, index) => {
         const isLeft = index % 2 === 0; // even index = left card
@@ -74,9 +74,9 @@ const SessionCard = () => {
             }`}
           >
             {/* Connector circle */}
-            <div className="absolute top-1/2 left-1/2 w-6 h-6 bg-amber-600 border-4 border-amber-900 rounded-full -translate-x-1/2 -translate-y-1/2 z-20" />
+            <div className="absolute top-1/2 left-1/2 w-6 h-6 sm:w-5 sm:h-5 xs:w-4 xs:h-4 bg-amber-600 border-4 border-amber-900 rounded-full -translate-x-1/2 -translate-y-1/2 z-20" />
 
-            {/* The card itself with props */}
+            {/* The card itself */}
             <HarryPotterCard
               title={card.title}
               subtitle={card.subtitle}
@@ -89,9 +89,11 @@ const SessionCard = () => {
             <img
               src={logos[index]}
               alt={`Logo ${index + 1}`}
-              className={`w-45 h-45 object-contain absolute top-1/2 -translate-y-1/2 float-animation ${
-                isLeft ? "right-[560px]" : "left-[560px]"
-              }`}
+              className={`
+                w-36 h-36 sm:w-28 sm:h-28 xs:w-20 xs:h-20
+                object-contain absolute top-1/2 -translate-y-1/2 float-animation
+                ${isLeft ? "right-[300px] sm:right-[200px] xs:right-[120px]" : "left-[300px] sm:left-[200px] xs:left-[120px]"}
+              `}
             />
           </div>
         );

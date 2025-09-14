@@ -2,9 +2,7 @@ import React from "react";
 import { Canvas } from "@react-three/fiber";
 import Particles from "./ui/Particles";
 import Bird3D from "./Bird3D";
-import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
-// import heading from "../assets/images/heading.png";
 import heading from "../assets/images/logo2.png";
 import CoinDemo from "./CoinDemo";
 
@@ -12,6 +10,7 @@ const Landing = ({ onRegisterClick }) => {
   return (
     <div className="relative w-full h-screen">
       <CoinDemo />
+
       {/* Particles Layer */}
       <div className="absolute inset-0 z-10">
         <Particles
@@ -25,28 +24,29 @@ const Landing = ({ onRegisterClick }) => {
           disableRotation={false}
         />
       </div>
-   <div className="relative z-30 flex flex-col items-center justify-center text-center px-4">
-<img
-style={{marginTop:"60px"}}
+
+      {/* Main content */}
+    {/* Main content */}
+<div className="relative z-30 flex flex-col items-center justify-center text-center px-4 space-y-6">
+  <img
+  style={{ marginTop: "60px" }}
   src={heading}
   alt="DSA Launchpad"
-  className="w-[350px] h-auto harry-potter taiwan-bounce relative z-10 mb-[-40px] "
+  className="w-[180px] sm:w-[250px] md:w-[300px] lg:w-[350px] max-h-[80px] sm:max-h-[100px] md:max-h-[200px] lg:max-h-[200px] object-contain harry-potter taiwan-bounce relative z-10"
 />
 
 
   {/* 3D Scene */}
-  <div className="w-[450px] h-[450px] relative -mt-16 z-20">
+  <div className="w-[220px] h-[180px] sm:w-[300px] sm:h-[2500px] md:w-[350px] md:h-[350px] relative z-20">
     <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
       <Bird3D />
     </Canvas>
   </div>
+
+  {/* Button */}
+  <HoverBorderGradientDemo onClick={onRegisterClick} />
 </div>
 
-
-
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-50">
-        <HoverBorderGradientDemo  onClick={onRegisterClick}/>
-      </div>
     </div>
   );
 };
