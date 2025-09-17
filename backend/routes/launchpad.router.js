@@ -19,7 +19,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: async (req, file) => {
     const fullName = req.body.fullName.replace(/\s+/g, "_");
-    const folder = "RSC2025/IPS/transactions";
+    const folder = "dsa_launchpad2025";
     const fileName = `${fullName}_transaction`;
 
     return {
