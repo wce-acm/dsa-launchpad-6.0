@@ -15,13 +15,14 @@ const Landing = ({ onRegisterClick }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Responsive scaling for heading/logo
-  const headingSize = (() => {
-    if (windowWidth < 640) return { width: 250, height: 90 }; // mobile
-    if (windowWidth < 768) return { width: 300, height: 110 }; // small tablets
-    if (windowWidth < 1024) return { width: 320, height: 200 }; // large tablets
-    return { width: 370, height: 200 }; // desktop
-  })();
+// Responsive scaling for heading/logo
+const headingSize = (() => {
+  if (windowWidth < 640) return { width: 300, height: 110 }; // mobile (increased)
+  if (windowWidth < 768) return { width: 350, height: 130 }; // small tablets (increased)
+  if (windowWidth < 1024) return { width: 400, height: 250 }; // large tablets (increased)
+  return { width: 450, height: 250 }; // desktop (increased)
+})();
+
 
   // Responsive scaling for 3D canvas
   const canvasSize = (() => {
@@ -35,7 +36,7 @@ const Landing = ({ onRegisterClick }) => {
     <div
       className="relative w-full flex flex-col items-center"
       style={{
-        minHeight: windowWidth < 768 ? "auto" : "100vh",
+        minHeight: windowWidth < 768 ? "auto" : "10vh",
         paddingTop: windowWidth < 768 ? "40px" : "0px",
         paddingBottom: windowWidth < 768 ? "40px" : "0px",
       }}
