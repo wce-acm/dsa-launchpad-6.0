@@ -77,7 +77,7 @@ const SessionCard = () => {
           particleSpread={10 * scaleFactor}
           speed={0.1}
           particleBaseSize={160 * scaleFactor}
-          moveParticlesOnHover={windowWidth > 768}
+          moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}
         />
