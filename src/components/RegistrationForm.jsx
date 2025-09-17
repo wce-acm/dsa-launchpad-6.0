@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import registrationLogo from "../assets/images/reg2.png";
-
+import submitButton from "../assets/images/submit.png";
+import qrcode from "../assets/images/qrcode.png";
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -121,7 +122,7 @@ const RegistrationForm = () => {
         {/* Payment QR */}
         <div className="text-center">
           <img
-            src="./src/assets/images/qrcode.png"
+            src={qrcode}
             alt="Payment QR"
             className="w-80 h-80 mx-auto float-animation"
           />
@@ -131,7 +132,7 @@ const RegistrationForm = () => {
         {/* Submit Button */}
      <div style={{marginBottom:"60px", marginLeft:"-20px"}}>
   <img
-  src="./src/assets/images/submit.png"
+  src={submitButton}
   alt="Submit"
   className="w-45 h-45 mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110 active:scale-95"
 />
