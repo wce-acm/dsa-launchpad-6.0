@@ -17,8 +17,8 @@ const Landing = ({ onRegisterClick }) => {
 
 // Responsive scaling for heading/logo
 const headingSize = (() => {
-  if (windowWidth < 640) return { width: 300, height: 110 }; // mobile (increased)
-  if (windowWidth < 768) return { width: 350, height: 130 }; // small tablets (increased)
+  if (windowWidth < 640) return { width: 380, height: 160 }; // mobile (increased)
+  if (windowWidth < 768) return { width: 400, height: 160 }; // small tablets (increased)
   if (windowWidth < 1024) return { width: 400, height: 250 }; // large tablets (increased)
   return { width: 450, height: 250 }; // desktop (increased)
 })();
@@ -26,8 +26,8 @@ const headingSize = (() => {
 
   // Responsive scaling for 3D canvas
   const canvasSize = (() => {
-    if (windowWidth < 640) return { width: 250, height: 200 };
-    if (windowWidth < 768) return { width: 330, height: 280 };
+    if (windowWidth < 640) return { width: 300, height: 270 };
+    if (windowWidth < 768) return { width: 350, height: 320 };
     if (windowWidth < 1024) return { width: 350, height: 350 };
     return { width: 350, height: 350 };
   })();
@@ -51,7 +51,7 @@ const headingSize = (() => {
           particleCount={200}
           particleSpread={10}
           speed={0.1}
-          particleBaseSize={160}
+          particleBaseSize={100}
           moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}

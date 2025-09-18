@@ -12,16 +12,23 @@ export function HoverBorderGradientDemo({ onClick }) {
   }, []);
 
   // Responsive sizing
-  const buttonWidth = windowWidth < 768 ? 180 : 250; // smaller on mobile
-  const buttonHeight = windowWidth < 768 ? 50 : 70;
-  const fontSize = windowWidth < 768 ? "text-lg" : "text-2xl";
+  const buttonWidth = windowWidth < 768 ? 220 : 250;
+  const buttonHeight = windowWidth < 768 ? 40 : 70;
+  const fontSize = windowWidth < 768 ? "text-xl" : "text-2xl";
+
+  // Extra margin for mobile
+  const mobileMarginTop = windowWidth < 768 ? "20px" : "10px";
 
   return (
-    <div className="flex justify-center text-center mt-10">
+    <div
+      className="flex justify-center text-center"
+      style={{ marginTop: mobileMarginTop }} // 👈 margin only on mobile
+    >
       <HoverBorderGradient
-        containerClassName={`rounded-full w-[${buttonWidth}px] h-[${buttonHeight}px]`}
         as="button"
         onClick={onClick}
+        containerClassName="rounded-full"
+        style={{ width: `${buttonWidth}px`, height: `${buttonHeight}px` }}
         className={`bg-black text-[#FFD700] flex items-center justify-center ${fontSize} font-bold space-x-3`}
       >
         <span>Register Now</span>
