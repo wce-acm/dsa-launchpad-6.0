@@ -20,7 +20,7 @@ const headingSize = (() => {
   if (windowWidth < 640) return { width: 380, height: 160 }; // mobile (increased)
   if (windowWidth < 768) return { width: 400, height: 160 }; // small tablets (increased)
   if (windowWidth < 1024) return { width: 400, height: 250 }; // large tablets (increased)
-  return { width: 450, height: 250 }; // desktop (increased)
+  return { width: 500, height: 300 }; // desktop (increased)
 })();
 
 
