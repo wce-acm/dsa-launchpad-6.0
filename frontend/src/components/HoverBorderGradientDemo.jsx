@@ -17,7 +17,7 @@ export function HoverBorderGradientDemo({ onClick }) {
   const fontSize = windowWidth < 768 ? "text-xl" : "text-2xl";
 
   // Extra margin for mobile
-  const mobileMarginTop = windowWidth < 768 ? "10px" : "10px";
+  const mobileMarginTop = windowWidth < 768 ? "20px" : "10px";
 
   return (
     <div
