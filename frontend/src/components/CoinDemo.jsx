@@ -1,5 +1,5 @@
-import wce from '../assets/images/wce.png';
-import acm from '../assets/images/acm1.png';
+import wce from '../assets/images/wce2.png';
+import acm from '../assets/images/acmlogo2.png';
 
 export default function LogoDisplay() {
   return (
@@ -9,14 +9,22 @@ export default function LogoDisplay() {
       <img
         src={wce}
         alt="WCE Logo"
+<<<<<<< HEAD
         className="w-35 h-35 sm:w-35 sm:h-35 md:w-70 md:h-70 object-contain zoom-animation"
+=======
+        className="w-20 h-20 sm:w-32 sm:h-32 md:w-90 md:h-90 object-contain zoom-animation"
+>>>>>>> cd7c48c (Your commit message)
       />
 
       {/* Right Logo */}
       <img
         src={acm}
         alt="ACM Logo"
+<<<<<<< HEAD
         className="w-35 h-40 sm:w-35 sm:h-35 md:w-70 md:h-70 object-contain zoom-animation"
+=======
+        className="w-20 h-20 sm:w-32 sm:h-32 md:w-90 md:h-90 object-contain zoom-animation"
+>>>>>>> cd7c48c (Your commit message)
       />
     </div>
   );
