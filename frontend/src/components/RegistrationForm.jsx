@@ -48,7 +48,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="min-h-[180vh] flex items-center justify-center px-4">
+    <div className="min-h-[180vh] flex items-center justify-center px-4" style={{marginTop:"-100px"}}>
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-lg rounded-xl p-10 space-y-10"
@@ -133,14 +133,14 @@ const RegistrationForm = () => {
           name="paymentScreenshot"
           accept="image/*"
           onChange={handleChange}
-          style={{ marginBottom: "30px",marginTop: "30px" }}
+          style={{ marginBottom: "30px",marginTop: "20px" }}
           className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-amber-500 file:text-black hover:file:bg-amber-600"
           required
         />
 
         {/* QR */}
         <div className="text-center mb-16">
-          <img src={qrcode} alt="Payment QR" className="w-80 h-80 mx-auto" />
+          <img src={qrcode} alt="Payment QR" className="w-90 h-90 mx-auto" />
         </div>
 
         {/* Submit */}
