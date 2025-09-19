@@ -59,7 +59,7 @@ const RegistrationForm = () => {
           <img
             src={registrationLogo}
             alt="Registration"
-            className="w-[400px] h-auto object-contain mx-auto floating"
+            className="w-[400px] h-auto object-contain mx-auto mb-4"
           />
         </div>
 

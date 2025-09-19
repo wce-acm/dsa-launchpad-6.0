@@ -39,3 +39,15 @@
 .read-the-docs {
   color: #888;
 }
+@font-face {
+  font-family: "harryp";
+  src: url("/fonts/HARRYP__.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HarryPotter";
+  src: url("/fonts/HarryPotter-ov4z.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

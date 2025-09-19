@@ -67,7 +67,7 @@ const HarryPotterCard = ({ title, subtitle, house, crestIcon, backText }) => {
         </div>
 
         {/* Back */}
-<div
+       <div
   style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
   className="
     absolute w-full h-full 
@@ -80,10 +80,15 @@ const HarryPotterCard = ({ title, subtitle, house, crestIcon, backText }) => {
     text-amber-100 text-center
   "
 >
-  <p className="text-xl md:text-2xl font-semibold font-cormorant leading-relaxed tracking-wide">
+  <p
+    className="text-2xl md:text-3xl  leading-snug tracking-wide"
+    style={{ fontFamily: "HarryPotter" }} // 👈 using the new font
+  >
     {backText}
   </p>
-</div>
+
+
+        </div>
 
       </div>
     </div>
