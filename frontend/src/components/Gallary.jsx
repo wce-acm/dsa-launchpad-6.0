@@ -12,7 +12,7 @@ function Gallary() {
       />
 
       {/* No negative margin, just sits right below */}
-      <div className="relative" style={{ height: "500px" }}>
+      <div className="relative" style={{ height: "600px" }}>
         <CircularGallery
           bend={0}
           textColor="#ffffff"
