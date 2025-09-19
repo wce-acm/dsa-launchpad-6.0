@@ -5,9 +5,11 @@ import Bird3D from "./Bird3D";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
 import heading from "../assets/images/logo2.png";
 import CoinDemo from "./CoinDemo";
+import birdPreview from "../assets/images/ball.png"; // <-- add your PNG preview here
 
 const Landing = ({ onRegisterClick }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [modelLoaded, setModelLoaded] = useState(false); // track if 3D model is ready
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -15,21 +17,20 @@ const Landing = ({ onRegisterClick }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-// Responsive scaling for heading/logo
-const headingSize = (() => {
-  if (windowWidth < 640) return { width: 380, height: 160 }; // mobile (increased)
-  if (windowWidth < 768) return { width: 400, height: 160 }; // small tablets (increased)
-  if (windowWidth < 1024) return { width: 400, height: 250 }; // large tablets (increased)
-  return { width: 500, height: 300 }; // desktop (increased)
-})();
-
+  // Responsive scaling for heading/logo
+  const headingSize = (() => {
+    if (windowWidth < 640) return { width: 420, height: 210 }; // mobile
+    if (windowWidth < 768) return { width: 400, height: 160 }; // small tablets
+    if (windowWidth < 1024) return { width: 350, height: 200 }; // large tablets
+    return { width: 450, height: 250 }; // desktop
+  })();
 
   // Responsive scaling for 3D canvas
   const canvasSize = (() => {
     if (windowWidth < 640) return { width: 300, height: 270 };
     if (windowWidth < 768) return { width: 350, height: 320 };
-    if (windowWidth < 1024) return { width: 350, height: 350 };
-    return { width: 350, height: 350 };
+    if (windowWidth < 1024) return { width: 400, height: 350 };
+    return { width: 400, height: 360 };
   })();
 
   return (
@@ -72,7 +73,7 @@ const headingSize = (() => {
           }}
         />
 
-        {/* 3D Canvas */}
+        {/* 3D Canvas with PNG fallback */}
         <div
           className="relative z-20"
           style={{
@@ -80,7 +81,18 @@ const headingSize = (() => {
             height: `${canvasSize.height}px`,
           }}
         >
-          <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
+          {!modelLoaded && (
+            <img
+              src={birdPreview}
+              alt="Bird Preview"
+              className="absolute inset-0 w-full h-full object-contain"
+            />
+          )}
+
+          <Canvas
+            camera={{ position: [0, 0, 6], fov: 50 }}
+            onCreated={() => setModelLoaded(true)} // when canvas initializes
+          >
             <Bird3D />
           </Canvas>
         </div>
