@@ -67,14 +67,24 @@ const HarryPotterCard = ({ title, subtitle, house, crestIcon, backText }) => {
         </div>
 
         {/* Back */}
-        <div
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-          className="absolute w-full h-full rounded-xl overflow-hidden border-2 border-amber-400 shadow-xl bg-gradient-to-b from-amber-900 via-amber-800 to-amber-700 flex items-center justify-center p-3 text-amber-100 text-center"
-        >
-          <p className="text-sm leading-relaxed font-cormorant">
-            {backText}
-          </p>
-        </div>
+<div
+  style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+  className="
+    absolute w-full h-full 
+    rounded-xl overflow-hidden 
+    border-2 border-amber-400 
+    shadow-2xl 
+    bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 
+    flex items-center justify-center 
+    p-6 
+    text-amber-100 text-center
+  "
+>
+  <p className="text-xl md:text-2xl font-semibold font-cormorant leading-relaxed tracking-wide">
+    {backText}
+  </p>
+</div>
+
       </div>
     </div>
   );

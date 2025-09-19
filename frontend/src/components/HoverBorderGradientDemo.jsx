@@ -31,7 +31,7 @@ export function HoverBorderGradientDemo({ onClick }) {
         style={{ width: `${buttonWidth}px`, height: `${buttonHeight}px` }}
         className={`bg-black text-[#FFD700] flex items-center justify-center ${fontSize} font-bold space-x-3`}
       >
-        <span>Register Now</span>
+         <span style={{fontSize:"25px"}}>Register Now</span>
       </HoverBorderGradient>
     </div>
   );
