@@ -7,6 +7,7 @@ import SessionCard from "./components/Session";
 import Particles from "./components/ui/Particles";
 import Footer from "./components/Footer";
 import loaderImage from "./assets/images/acmlogo.png"; // Replace with your image
+import Gallary from "./components/Gallary";
 
 function App() {
   const registrationRef = useRef(null);
@@ -60,6 +61,7 @@ function App() {
           />
 
           <SessionCard />
+          <Gallary />
 
           <div ref={registrationRef}>
             <RegistrationForm />
