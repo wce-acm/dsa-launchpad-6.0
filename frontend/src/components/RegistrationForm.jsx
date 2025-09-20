@@ -53,7 +53,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="min-h-[180vh] flex items-center justify-center px-4" style={{marginTop:"-100px"}}>
+    <div className="min-h-[180vh] flex items-center justify-center px-4">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-lg rounded-xl p-10 space-y-10"
@@ -131,17 +131,24 @@ const RegistrationForm = () => {
            style={{ marginBottom: "30px" }}
           className="mb-[30px]" // same as your text inputs
         />
+<div className="relative"  style={{ marginTop: "20px" }}>
+  <input
+    type="file"
+    name="paymentScreenshot"
+    accept="image/*"
+    onChange={handleChange}
+    style={{ marginBottom: "30px", marginTop: "10px", height: "90px" }} // increased height
+    className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-amber-500 file:text-black hover:file:bg-amber-600"
+    required
+  />
+  <span className="absolute left-3 top-2 text-gray-400 text-m pointer-events-none" style={{marginTop:"60px",marginLeft:"10px"}}>
+    Upload Payment Screenshot
+  </span>
+</div>
 
-        {/* Payment Screenshot Upload */}
-        <input
-          type="file"
-          name="paymentScreenshot"
-          accept="image/*"
-          onChange={handleChange}
-          style={{ marginBottom: "30px",marginTop: "20px" }}
-          className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-amber-500 file:text-black hover:file:bg-amber-600"
-          required
-        />
+
+
+
 
         {/* QR */}
         <div className="text-center mb-16">

@@ -3,7 +3,7 @@ import DSA5 from "../assets/images/Dsa_5.png";
 
 function Gallary() {
   return (
-    <div>
+    <div style={{marginTop:"200px"}}>
       {/* Remove bottom margin on the image */}
       <img
         src={DSA5}

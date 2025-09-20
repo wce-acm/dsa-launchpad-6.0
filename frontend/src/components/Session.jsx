@@ -33,7 +33,7 @@ const SessionCard = () => {
 
   const cards = [
     {
-      title: "Welcome to Hogwarts",
+      title: "Unloking the Chamber of DSA Foundation",
       subtitle: "Session 1",
       house: "Day 1",
       crestIcon: "⚡",
@@ -41,7 +41,7 @@ const SessionCard = () => {
         "Begin your DSA adventure by learning problem-solving, logic, and simple data-handling spells to tackle coding challenges.",
     },
     {
-      title: "The Chamber of Algorithms",
+      title: "The Magic of Searching & Sorting",
       subtitle: "Session 2",
       house: "Day 1",
       crestIcon: "🦡",
@@ -49,7 +49,7 @@ const SessionCard = () => {
         "Unlock the secrets of searching, sorting, and stack magic to organize data and conquer problems efficiently.",
     },
     {
-      title: "The Order of Structures",
+      title: "The Goblet of Queues & Linked Lists",
       subtitle: "Session 3",
       house: "Day 2",
       crestIcon: "🦁",
@@ -57,7 +57,7 @@ const SessionCard = () => {
         "Master linked sequences and structured data flows to control information with wizard-like precision.",
     },
     {
-      title: "Defence Against the Dark Arts",
+      title: "The Forbidden Trees & Marauder's Graph",
       subtitle: "Session 4",
       house: "Day 2",
       crestIcon: "🦅",
