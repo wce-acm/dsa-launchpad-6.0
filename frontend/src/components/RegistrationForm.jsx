@@ -34,7 +34,12 @@ const RegistrationForm = () => {
         data.append(key, formData[key]);
       });
 
-      const res = await fetch("http://localhost:5000/api/launchpad", {
+      // const res = await fetch("http://localhost:5000/api/launchpad", {
+      //   method: "POST",
+      //   body: data,
+      // });
+
+      const res = await fetch("https://dsa-launchpad-6-0-av2t.onrender.com/api/launchpad", {
         method: "POST",
         body: data,
       });
