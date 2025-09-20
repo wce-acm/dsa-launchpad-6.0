@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow relative">
-        <div className="absolute inset-0 z-10">
+        {/* <div className="absolute inset-0 z-10">
           <Particles
             particleColors={["#ffffff", "#f6f4f1", "#f3f1ea"]}
             particleCount={300}
@@ -51,7 +51,7 @@ function App() {
             alphaParticles={false}
             disableRotation={false}
           />
-        </div>
+        </div> */}
 
         <Background>
           <Landing

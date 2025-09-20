@@ -49,7 +49,7 @@ const Landing = ({ onRegisterClick }) => {
       <CoinDemo />
 
       {/* Particles */}
-      <div className="absolute inset-0 z-10">
+      {/* <div className="absolute inset-0 z-10">
         <Particles
           particleColors={["#ffffff", "#f6f4f1", "#f3f1ea"]}
           particleCount={particleCount}
@@ -59,8 +59,8 @@ const Landing = ({ onRegisterClick }) => {
           moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}
-        />
-      </div>
+        /> */}
+      {/* </div> */}
 
       {/* Main Content */}
       <div className="relative z-30 flex flex-col items-center justify-center text-center px-4 space-y-6">

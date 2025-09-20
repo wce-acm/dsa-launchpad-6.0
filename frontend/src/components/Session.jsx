@@ -71,7 +71,7 @@ const SessionCard = () => {
   return (
     <div className="relative flex flex-col items-center py-8 md:py-16">
       {/* Background Particles - Adjusted for mobile */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <Particles
           particleColors={["#ffffff", "#f6f4f1", "#f3f1ea"]}
           particleCount={particleCount}
@@ -82,7 +82,7 @@ const SessionCard = () => {
           alphaParticles={false}
           disableRotation={false}
         />
-      </div>
+      </div> */}
 
       {/* Snake line - scaled appropriately */}
       <div 
