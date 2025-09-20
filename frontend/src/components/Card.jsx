@@ -36,49 +36,29 @@ const HarryPotterCard = ({ title, subtitle, house, crestIcon, backText }) => {
         {/* Front */}
         <div
           style={{ backfaceVisibility: "hidden" }}
-          className="absolute w-full h-full rounded-xl overflow-hidden shadow-xl border-3 border-amber-800"
+          className="absolute w-full h-full rounded-xl overflow-hidden border-2 border-amber-400 shadow-xl"
         >
-          {/* Golden background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-amber-900 via-amber-800 to-amber-600 opacity-70 z-10"></div>
           <div
-            className="absolute inset-0 z-10"
-            style={{
-              background: "#ffc4004e",
-              opacity: 0.9,
-            }}
-          ></div>
-
-          {/* Optional: palace background */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-20"
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${palace})` }}
           ></div>
 
-          <div className="relative z-20 h-full flex flex-col items-center justify-between p-4 text-white">
-            {/* Circle */}
-            <div
-              className="w-16 h-16 mt-4 rounded-full flex items-center justify-center shadow-lg"
-              style={{
-                backgroundColor: "#f5c483ff",
-                border: "4px solid #ff660086",
-              }}
-            >
+          <div className="relative z-20 h-full flex flex-col items-center justify-between p-4 text-amber-100">
+            <div className="w-16 h-16 mt-4 bg-amber-400 rounded-full flex items-center justify-center border-4 border-amber-600 shadow-lg">
               <div className="text-3xl">{crestIcon || "⚡"}</div>
             </div>
-
-            {/* Title & Subtitle */}
             <div className="text-center">
-              <h2 className="text-lg font-cinzel font-bold mb-1 drop-shadow-md text-white">
+              <h2 className="text-lg font-cinzel font-bold mb-1 text-amber-300 drop-shadow-md">
                 {title || "Harry Potter"}
               </h2>
-              <p className="text-xs font-cormorant italic text-white">
+              <p className="text-xs text-amber-200 font-cormorant italic">
                 {subtitle || "The Boy Who Lived"}
               </p>
             </div>
-
-            {/* House badge */}
             {house && (
               <div className="bg-gradient-to-r from-red-800 to-red-600 px-3 py-1 rounded-full mb-4 border border-amber-400 shadow-md">
-                <span className="font-bold text-[10px] tracking-wider text-white">
+                <span className="font-bold text-[10px] text-amber-100 tracking-wider">
                   {house}
                 </span>
               </div>
@@ -87,22 +67,28 @@ const HarryPotterCard = ({ title, subtitle, house, crestIcon, backText }) => {
         </div>
 
         {/* Back */}
-        <div
-          style={{
-            backfaceVisibility: "hidden",
-            transform: "rotateY(180deg)",
-            background: "#D4AF37",
-            color: "white", // changed text color
-          }}
-          className="absolute w-full h-full rounded-xl overflow-hidden border-2 border-amber-400 shadow-2xl flex items-center justify-center p-6 text-center"
-        >
-          <p
-            className="text-2xl md:text-3xl leading-snug tracking-wide"
-            style={{ fontFamily: "HarryPotter" }}
-          >
-            {backText}
-          </p>
-        </div>
+     <div
+  style={{ backfaceVisibility: "hidden",backgroundColor: "#D4AF37", transform: "rotateY(180deg)" }}
+  className="
+    absolute w-full h-full
+    rounded-xl overflow-hidden
+    border-2 border-amber-400
+    shadow-2xl
+    flex items-center justify-center
+    p-6
+    text-amber-100 text-center
+  "
+>
+  <p
+    className="text-2xl md:text-3xl leading-snug tracking-wide"
+    style={{ fontFamily: "HarryPotter" }}
+  >
+    {backText}
+  </p>
+</div>
+
+
+
       </div>
     </div>
   );
