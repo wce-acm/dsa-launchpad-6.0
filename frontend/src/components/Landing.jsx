@@ -6,6 +6,7 @@ import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
 import heading from "../assets/images/logo2.png";
 import CoinDemo from "./CoinDemo";
 import birdPreview from "../assets/images/ball.png"; // <-- add your PNG preview here
+import { Suspense } from "react";
 
 const Landing = ({ onRegisterClick }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -16,6 +17,8 @@ const Landing = ({ onRegisterClick }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const particleCount = windowWidth < 768 ? 50 : 200;
 
   // Responsive scaling for heading/logo
   const headingSize = (() => {
@@ -49,7 +52,7 @@ const Landing = ({ onRegisterClick }) => {
       <div className="absolute inset-0 z-10">
         <Particles
           particleColors={["#ffffff", "#f6f4f1", "#f3f1ea"]}
-          particleCount={200}
+          particleCount={particleCount}
           particleSpread={10}
           speed={0.1}
           particleBaseSize={100}
@@ -91,6 +94,7 @@ const Landing = ({ onRegisterClick }) => {
 
           <Canvas
             camera={{ position: [0, 0, 6], fov: 50 }}
+            dpr={windowWidth < 1024 ? 1 : window.devicePixelRatio}
             onCreated={() => setModelLoaded(true)} // when canvas initializes
           >
             <Bird3D />

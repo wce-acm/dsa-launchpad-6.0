@@ -28,6 +28,7 @@ const SessionCard = () => {
     return 0.6;                             // Small phones
   };
 
+  const particleCount = windowWidth < 768 ? 50 : 200;
   const scaleFactor = getScaleFactor();
 
   const cards = [
@@ -73,7 +74,7 @@ const SessionCard = () => {
       <div className="absolute inset-0 z-0">
         <Particles
           particleColors={["#ffffff", "#f6f4f1", "#f3f1ea"]}
-          particleCount={Math.floor(300 * scaleFactor)}
+          particleCount={particleCount}
           particleSpread={10 * scaleFactor}
           speed={0.1}
           particleBaseSize={160 * scaleFactor}
