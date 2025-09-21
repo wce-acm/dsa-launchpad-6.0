@@ -7,13 +7,12 @@ import "./footer.css"; // Import the mobile CSS
 export default function Footer() {
   return (
     <footer
-      className="w-full mt-8 text-white py-3 flex flex-col md:flex-row md:justify-between md:items-center gap-6 bg-black px-4"
-      style={{ fontFamily: "Plus Jakarta Sans, sans-serif" }}
+      className="w-full mt-8 text-white py-3 flex flex-col md:flex-row md:justify-between md:items-center gap-6 bg-black px-4 font-plusjakarta"
     >
       {/* ACM Logo and Copyright */}
-      <div className="footer-logo md:flex md:items-center gap-4" style={{marginRight:"200px"}}>
+      <div className="footer-logo md:flex md:items-center gap-4" style={{ marginRight: "200px" }}>
         <img src={acmLogo} alt="ACM Logo" className="w-14 md:w-20" />
-        <div className="flex flex-col text-center md:text-left text-base md:text-lg">
+        <div className="flex flex-col text-center md:text-left text-base md:text-lg leading-tight">
           <span className="font-medium">
             Copyright ©2025. All rights reserved by
           </span>
@@ -23,9 +22,12 @@ export default function Footer() {
 
       {/* Connect Us / Social Media */}
       <div className="footer-social flex flex-col items-center md:items-end gap-2">
-        <h2 className="text-blue-200 text-s md:text-lg mb-1" style={{marginRight:"100px",fontFamily:"PlusJakartaSans"}}>
-          Connect Us
-        </h2>
+      <h2
+  className="text-blue-200 text-base md:text-lg leading-tight mb-1 mr-4" style={{fontSize:"25px", marginRight: "15px"}}
+>
+  Connect Us
+</h2>
+
         <div className="flex flex-wrap justify-center md:justify-end gap-2">
           <a href="mailto:wceacmsc@gmail.com" className="p-2 bg-zinc-200 rounded-full hover:bg-sky-300 transition" target="_blank" rel="noopener noreferrer">
             <IoMail size={18} className="text-black" />
@@ -36,15 +38,10 @@ export default function Footer() {
           <a href="https://www.instagram.com/wce_acm/" className="p-2 bg-zinc-200 rounded-full hover:bg-sky-300 transition" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={18} className="text-black" />
           </a>
-          <a href="https://www.facebook.com/wceacm/" className="p-2 bg-zinc-200 rounded-full hover:bg-sky-300 transition" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF size={18} className="text-black" />
-          </a>
           <a href="https://www.youtube.com/@wceacm" className="p-2 bg-zinc-200 rounded-full hover:bg-sky-300 transition" target="_blank" rel="noopener noreferrer">
             <FaYoutube size={18} className="text-black" />
           </a>
-          <a href="https://x.com/wce_acm" className="p-2 bg-zinc-200 rounded-full hover:bg-sky-300 transition" target="_blank" rel="noopener noreferrer">
-            <FaTwitter size={18} className="text-black" />
-          </a>
+         
         </div>
       </div>
     </footer>

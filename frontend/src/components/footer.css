@@ -1,85 +1,86 @@
-/* Default styles (for desktop/laptop remain same) */
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+/* Apply globally to footer */
 footer {
-	color: white;
-	padding: 20px 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 5px;
-	background: #000;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: #000;
+  line-height: 1.5; /* keeps consistent text height */
 }
 
 footer img {
-	width: 100px;
+  width: 100px;
 }
 
 .copyright_text {
-	display: flex;
-	flex-direction: column;
-	gap: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.5; /* consistent text height */
 }
 
-.copyright_text span {
-	font-family: var(--main-font);
-	font-weight: 500;
-}
 /* Mobile view adjustments */
 @media screen and (max-width: 768px) {
-	footer {
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		padding: 15px;
-		gap: 20px;
-	}
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    gap: 20px;
+  }
 
-	/* Center logo and increase size */
-	.footer-logo {
-		margin-right: 0 !important;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+  /* Center logo and increase size */
+  .footer-logo {
+    margin-right: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-	footer img {
-		width: 120px; /* increased size for mobile */
-	}
+  footer img {
+    width: 120px;
+  }
+.footer-social h2 {
+  font-size: 0.5rem;   /* same as copyright text */
+  line-height: 1.5;  /* consistent height */
+  /* space before icons */
+}
+  .footer-social {
+    align-items: center !important;
+  }
 
-	.footer-social h2 {
-		margin-right: 0 !important;
-		font-size: 16px;
-	}
+  .footer-social div a {
+    padding: 8px;
+    margin: 3px;
+  }
 
-	.footer-social {
-		align-items: center !important;
-	}
-
-	.footer-social div a {
-		padding: 8px; /* smaller padding for icons */
-		margin: 3px;
-	}
-
-	.copyright_text {
-		font-size: 14px;
-		gap: 2px;
-	}
+  .copyright_text {
+    font-size: 14px;
+    gap: 2px;
+    line-height: 1.5;
+  }
 }
 
-/* Extra small screens (phones) */
+/* Extra small screens */
 @media screen and (max-width: 480px) {
-	footer img {
-		width: 140px; /* even bigger for small phones */
-	}
+  footer img {
+    width: 140px;
+  }
+.footer-social h2 {
+    font-size: 1.125rem; /* matches md:text-lg */
+  }
 
-	.footer-social h2 {
-		font-size: 14px;
-	}
+  .footer-social div a {
+    padding: 6px;
+  }
 
-	.footer-social div a {
-		padding: 6px;
-	}
-
-	.copyright_text span {
-		font-size: 12px;
-	}
+  .copyright_text span {
+    font-size: 12px;
+  }
 }
