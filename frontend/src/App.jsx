@@ -6,10 +6,9 @@ import RegistrationForm from "./components/RegistrationForm";
 import SessionCard from "./components/Session";
 import Particles from "./components/ui/Particles";
 import Footer from "./components/Footer";
-import loaderImage from "./assets/images/acmlogo.png"; // Replace with your image
 import Gallary from "./components/Gallary";
 import EventSpotlight from "./components/Event";
-
+import Loader from "./components/ui/Loader"; // <-- Import the new Loader
 
 function App() {
   const registrationRef = useRef(null);
@@ -30,11 +29,7 @@ function App() {
   if (loading) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-        <img
-          src={loaderImage}
-          alt="Loading..."
-          className="w-40 h-40 fade-zoom-out"
-        />
+        <Loader /> {/* <-- Use the spinning loader here */}
       </div>
     );
   }
@@ -42,6 +37,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow relative">
+        {/* Uncomment if you want particles */}
         {/* <div className="absolute inset-0 z-10">
           <Particles
             particleColors={["#ffffff", "#f6f4f1", "#f3f1ea"]}
@@ -63,7 +59,7 @@ function App() {
           />
 
           <SessionCard />
-         <EventSpotlight mt-16 />
+          <EventSpotlight mt-16 />
           <Gallary />
 
           <div ref={registrationRef}>

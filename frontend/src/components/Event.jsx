@@ -9,12 +9,12 @@ const EventSpotlight = () => {
     <div className="pt-12 px-4 md:px-10 mx-auto max-w-[1200px]">
       {/* Heading Section */}
       <div className="flex flex-col items-center mb-24">
-  <img
-    src={eventlogo}
-    alt="Event Logo"
-    className="w-80 h-80 md:w-80 md:h-80 mb-4 object-contain"
-  />
-</div>
+        <img
+          src={eventlogo}
+          alt="Event Logo"
+          className="w-80 h-80 md:w-80 md:h-80 mb-4 object-contain"
+        />
+      </div>
 
       {/* Content Section */}
       <div className="flex flex-col md:flex-row gap-6">
@@ -34,28 +34,29 @@ const EventSpotlight = () => {
         </div>
 
         {/* Right Side - Event Details */}
+        {/* Right Side - Event Details */}
         <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:pl-8 md:pr-16 mx-auto md:mx-0">
           <div className="flex flex-col gap-6">
             {/* Date */}
-            <div className="flex flex-col items-center">
-              <img src={calendarImg} alt="Calendar" className="w-20 h-20 mb-2" />
-              <span className="text-lg font-semibold text-white text-center">
+            <div className="flex items-center gap-4">
+              <img src={calendarImg} alt="Calendar" className="w-20 h-20" />
+              <span className="text-xl font-semibold text-white">
                 11th & 12th November 2026
               </span>
             </div>
 
             {/* Time */}
-            <div className="flex flex-col items-center">
-              <img src={clockImg} alt="Clock" className="w-20 h-20 mb-2" />
-              <span className="text-lg font-semibold text-white text-center">
+            <div className="flex items-center gap-4">
+              <img src={clockImg} alt="Clock" className="w-20 h-20" />
+              <span className="text-xl font-semibold text-white">
                 10:00 AM - 6:00 PM
               </span>
             </div>
 
             {/* Venue */}
-            <div className="flex flex-col items-center">
-              <img src={locationImg} alt="Location" className="w-20 h-20 mb-2" />
-              <span className="text-lg font-semibold text-white text-center">
+            <div className="flex items-center gap-4">
+              <img src={locationImg} alt="Location" className="w-20 h-20" />
+              <span className="text-xl font-semibold text-white">
                 Mini CCF, Walchand College of Engineering, Sangli
               </span>
             </div>
