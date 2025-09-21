@@ -57,7 +57,7 @@ const SessionCard = () => {
         "Master linked sequences and structured data flows to control information with wizard-like precision.",
     },
     {
-      title: "The Forbidden Trees & Marauder's Graph",
+      title: "Forbidden Trees & Marauder's Graph",
       subtitle: "Session 4",
       house: "Day 2",
       crestIcon: "🦅",

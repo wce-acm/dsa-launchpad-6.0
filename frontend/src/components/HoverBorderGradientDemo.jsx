@@ -29,7 +29,7 @@ export function HoverBorderGradientDemo({ onClick }) {
         onClick={onClick}
         containerClassName="rounded-full"
         style={{ width: `${buttonWidth}px`, height: `${buttonHeight}px` }}
-        className={`bg-black text-[#FFD700] flex items-center justify-center ${fontSize} font-bold space-x-3`}
+        className={`bg-black text-[#FFD700] flex items-center justify-center ${fontSize} font-bold space-x-3 jakarta`}
       >
          <span style={{fontSize:"25px"}}>Register Now</span>
       </HoverBorderGradient>

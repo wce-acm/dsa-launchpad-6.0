@@ -14,7 +14,7 @@ const HarryPotterCard = ({ title, subtitle, house, crestIcon, backText }) => {
 
   return (
     <div
-      className="relative w-64 h-[350px] cursor-pointer perspective-1000"
+      className="relative w-64 h-[350px] cursor-pointer perspective-1000 jakarta" // <-- Apply font here
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
         setMousePosition({ x: 0, y: 0 });
@@ -29,69 +29,61 @@ const HarryPotterCard = ({ title, subtitle, house, crestIcon, backText }) => {
           transition: "transform 0.7s",
           transform: isFlipped
             ? "rotateY(180deg)"
-            : `rotateY(${mousePosition.x * 15}deg) rotateX(${mousePosition.y * -15}deg)`,
+            : `rotateY(${mousePosition.x * 15}deg) rotateX(${
+                mousePosition.y * -15
+              }deg)`,
         }}
         className="absolute w-full h-full"
       >
         {/* Front */}
         <div
-  style={{ backfaceVisibility: "hidden" }}
-  className="absolute w-full h-full rounded-xl overflow-hidden border-2 border-amber-400 shadow-xl"
->
-  <div className="absolute inset-0 bg-gradient-to-b from-amber-900 via-amber-800 to-amber-600 opacity-70 z-10"></div>
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: `url(${palace})` }}
-  ></div>
+          style={{ backfaceVisibility: "hidden" }}
+          className="absolute w-full h-full rounded-xl overflow-hidden border-2 border-amber-400 shadow-xl"
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-amber-900 via-amber-800 to-amber-600 opacity-70 z-10"></div>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${palace})` }}
+          ></div>
 
-  <div className="relative z-20 h-full flex flex-col items-center justify-between p-4 text-amber-100 font-[PlusJakartaSans]">
-    <div className="w-16 h-16 mt-4 bg-amber-400 rounded-full flex items-center justify-center border-4 border-amber-600 shadow-lg">
-      <div className="text-3xl">{crestIcon || "⚡"}</div>
-    </div>
+          <div className="relative z-20 h-full flex flex-col items-center justify-between p-4 text-amber-100">
+            <div className="w-16 h-16 mt-4 bg-amber-400 rounded-full flex items-center justify-center border-4 border-amber-600 shadow-lg">
+              <div className="text-3xl">{crestIcon || "⚡"}</div>
+            </div>
 
-    <div className="text-center">
-      <h2 className="text-lg font-bold mb-1 text-amber-300 drop-shadow-md">
-        {title || "Harry Potter"}
-      </h2>
-      <p className="text-xs text-amber-200 italic">
-        {subtitle || "The Boy Who Lived"}
-      </p>
-    </div>
+            <div className="text-center">
+              <h2 className="text-[10px] font-bold mb-1 text-amber-300 drop-shadow-md">
+                {title || "Harry Potter"}
+              </h2>
+              <p className="text-sm text-amber-200 italic">
+                {subtitle || "The Boy Who Lived"}
+              </p>
+            </div>
 
-    {house && (
-      <div className="bg-gradient-to-r from-red-800 to-red-600 px-3 py-1 rounded-full mb-4 border border-amber-400 shadow-md">
-        <span className="font-bold text-[10px] text-amber-100 tracking-wider">
-          {house}
-        </span>
-      </div>
-    )}
-  </div>
-</div>
-
+            {house && (
+              <div className="bg-gradient-to-r from-red-800 to-red-600 px-3 py-1 rounded-full mb-4 border border-amber-400 shadow-md">
+                <span className="font-bold text-[10px] text-amber-100 tracking-wider">
+                  {house}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
 
         {/* Back */}
-     <div
-  style={{ backfaceVisibility: "hidden",backgroundColor: "#FFBF00", transform: "rotateY(180deg)",color:"white" }}
-  className="
-    absolute w-full h-full
-    rounded-xl overflow-hidden
-    border-2 border-amber-400
-    shadow-2xl
-    flex items-center justify-center
-    p-6
-    text-amber-100 text-center
-  "
->
-  <p
-    className="text-2xl md:text-3xl leading-snug tracking-wide"
-    style={{ fontFamily: "PlusJakartaSans" }}
-  >
-    {backText}
-  </p>
-</div>
-{/* style={{fontFamily:"PlusJakartaSans"}} */}
-
-
+        <div
+          style={{
+            backfaceVisibility: "hidden",
+            backgroundColor: "#FFBF00",
+            transform: "rotateY(180deg)",
+            color: "white",
+          }}
+          className="absolute w-full h-full rounded-xl overflow-hidden border-2 border-amber-400 shadow-2xl flex items-center justify-center p-6 text-center"
+        >
+          <p className="text-1xl md:text-1xl leading-snug tracking-wide p-4">
+            {backText}
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,9 @@ import eventlogo from "../assets/images/Eventlogo.png";
 
 const EventSpotlight = () => {
   return (
-    <div className="pt-12 px-4 md:px-10 mx-auto max-w-[1200px]">
+    <div className="pt-12 px-4 md:px-10 mx-auto max-w-[1200px] jakarta">
+      {" "}
+      {/* Added jakarta */}
       {/* Heading Section */}
       <div className="flex flex-col items-center mb-24">
         <img
@@ -15,7 +17,6 @@ const EventSpotlight = () => {
           className="w-80 h-80 md:w-80 md:h-80 mb-4 object-contain"
         />
       </div>
-
       {/* Content Section */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left Side - Google Map */}
@@ -33,7 +34,6 @@ const EventSpotlight = () => {
           ></iframe>
         </div>
 
-        {/* Right Side - Event Details */}
         {/* Right Side - Event Details */}
         <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:pl-8 md:pr-16 mx-auto md:mx-0">
           <div className="flex flex-col gap-6">
@@ -56,7 +56,7 @@ const EventSpotlight = () => {
             {/* Venue */}
             <div className="flex items-center gap-4">
               <img src={locationImg} alt="Location" className="w-20 h-20" />
-              <span className="text-xl font-semibold text-white">
+              <span className="text-xl font-semibold text-white text-left">
                 Mini CCF, Walchand College of Engineering, Sangli
               </span>
             </div>
