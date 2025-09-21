@@ -2,7 +2,7 @@ import React from "react";
 import { IoMail } from "react-icons/io5";
 import { FaLinkedinIn, FaInstagram, FaFacebookF, FaYoutube, FaTwitter } from "react-icons/fa";
 import acmLogo from "../assets/images/acmlogo.png";
-import "./Footer.css"; // Import the mobile CSS
+import "./footer.css"; // Import the mobile CSS
 
 export default function Footer() {
   return (
