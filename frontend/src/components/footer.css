@@ -1,3 +1,4 @@
+/* Default styles (for desktop/laptop remain same) */
 footer {
 	color: white;
 	padding: 20px 0;
@@ -5,7 +6,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	gap: 5px;
-    background: #000;
+	background: #000;
 }
 
 footer img {
@@ -22,21 +23,63 @@ footer img {
 	font-family: var(--main-font);
 	font-weight: 500;
 }
-
-@media screen and (max-width: 1000px) {
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
 	footer {
 		flex-direction: column;
-		gap: 10px;
+		align-items: center;
+		text-align: center;
+		padding: 15px;
+		gap: 20px;
+	}
+
+	/* Center logo and increase size */
+	.footer-logo {
+		margin-right: 0 !important;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	footer img {
-		width: 80px;
+		width: 120px; /* increased size for mobile */
+	}
 
+	.footer-social h2 {
+		margin-right: 0 !important;
+		font-size: 16px;
+	}
+
+	.footer-social {
+		align-items: center !important;
+	}
+
+	.footer-social div a {
+		padding: 8px; /* smaller padding for icons */
+		margin: 3px;
 	}
 
 	.copyright_text {
-		text-align: center;
 		font-size: 14px;
-		gap: 0;
+		gap: 2px;
+	}
+}
+
+/* Extra small screens (phones) */
+@media screen and (max-width: 480px) {
+	footer img {
+		width: 140px; /* even bigger for small phones */
+	}
+
+	.footer-social h2 {
+		font-size: 14px;
+	}
+
+	.footer-social div a {
+		padding: 6px;
+	}
+
+	.copyright_text span {
+		font-size: 12px;
 	}
 }
