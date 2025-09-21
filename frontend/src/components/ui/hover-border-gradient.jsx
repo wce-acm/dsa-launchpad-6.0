@@ -55,7 +55,8 @@ export function HoverBorderGradient({
       {...props}
     >
       {/* Button Text */}
-      <span className="z-10" style={{fontFamily:"PlusJakartaSans"}}>{children}</span>
+   <span className="z-10 font-jakarta">{children}</span>
+
 
       {/* Animated Gradient Border */}
       <motion.div

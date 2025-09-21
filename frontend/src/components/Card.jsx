@@ -62,7 +62,7 @@ const HarryPotterCard = ({ title, subtitle, house, crestIcon, backText }) => {
 
             {house && (
               <div className="bg-gradient-to-r from-red-800 to-red-600 px-3 py-1 rounded-full mb-4 border border-amber-400 shadow-md">
-                <span className="font-bold text-[10px] text-amber-100 tracking-wider">
+                <span className="font-bold text-[13px] text-amber-100 tracking-wider " >
                   {house}
                 </span>
               </div>
