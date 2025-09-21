@@ -51,7 +51,9 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="min-h-[180vh] flex items-center justify-center px-4 jakarta"> {/* Apply font here */}
+    <div className="min-h-[180vh] flex items-center justify-center px-4 jakarta">
+      {" "}
+      {/* Apply font here */}
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-lg rounded-xl p-10 space-y-10"
@@ -130,23 +132,40 @@ const RegistrationForm = () => {
           className="mb-[30px]" // same as your text inputs
         />
 
-        {/* File Input */}
-        <div className="relative" style={{ marginTop: "20px" }}>
+        <div className="w-full mt-5">
+          <label
+            htmlFor="paymentScreenshot"
+            className="block w-full rounded-lg border border-gray-600 bg-transparent px-4 py-3 cursor-pointer focus-within:ring-2 focus-within:ring-amber-400"
+          >
+            {/* Text (placeholder or filename) */}
+            <span
+              id="fileLabel"
+              className="block text-left text-gray-400 text-sm mb-3 truncate"
+            >
+              Upload Payment Screenshot
+            </span>
+
+            {/* "Choose File" button */}
+            <span className="bg-amber-500 text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-amber-600">
+              Choose File
+            </span>
+          </label>
+
+          {/* Hidden file input */}
           <input
+            id="paymentScreenshot"
             type="file"
             name="paymentScreenshot"
             accept="image/*"
-            onChange={handleChange}
-            style={{ marginBottom: "30px", marginTop: "10px", height: "90px" }}
-            className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-amber-500 file:text-black hover:file:bg-amber-600"
+            onChange={(e) => {
+              handleChange(e);
+              const fileName =
+                e.target.files?.[0]?.name || "Upload Payment Screenshot";
+              document.getElementById("fileLabel").textContent = fileName;
+            }}
+            className="hidden"
             required
           />
-          <span
-            className="absolute left-3 top-2 text-gray-400 text-m pointer-events-none"
-            style={{ marginTop: "60px", marginLeft: "10px" }}
-          >
-            Upload Payment Screenshot
-          </span>
         </div>
 
         {/* QR */}
