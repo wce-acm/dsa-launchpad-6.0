@@ -41,7 +41,7 @@ const SessionCard = () => {
         "Begin your DSA adventure by learning problem-solving, logic, and simple data-handling spells to tackle coding challenges.",
     },
     {
-      title: "The Magic of Searching & Sorting",
+      title: "The Magic of Sort, Recursion & Stack",
       subtitle: "Session 2",
       house: "Day 1",
       crestIcon: "🦡",
