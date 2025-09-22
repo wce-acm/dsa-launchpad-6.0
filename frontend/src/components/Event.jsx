@@ -41,7 +41,7 @@ const EventSpotlight = () => {
             <div className="flex items-center gap-4">
               <img src={calendarImg} alt="Calendar" className="w-20 h-20" />
               <span className="text-xl font-semibold text-white">
-                11th & 12th November 2026
+                11th & 12th October 2025
               </span>
             </div>
 
@@ -49,7 +49,7 @@ const EventSpotlight = () => {
             <div className="flex items-center gap-4">
               <img src={clockImg} alt="Clock" className="w-20 h-20" />
               <span className="text-xl font-semibold text-white">
-                10:00 AM - 6:00 PM
+                9:00 AM - 6:00 PM
               </span>
             </div>
 
