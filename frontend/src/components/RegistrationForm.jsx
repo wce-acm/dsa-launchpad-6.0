@@ -16,6 +16,9 @@ const RegistrationForm = () => {
     paymentScreenshot: null,
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [alert, setAlert] = useState({ type: "", message: "" });
+
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (files) {
@@ -25,8 +28,15 @@ const RegistrationForm = () => {
     }
   };
 
+  const showAlert = (type, message) => {
+    setAlert({ type, message });
+    setTimeout(() => setAlert({ type: "", message: "" }), 3000); // hide after 5s
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setAlert({ type: "", message: "" });
 
     try {
       const data = new FormData();
@@ -36,24 +46,77 @@ const RegistrationForm = () => {
 
       const res = await fetch(
         "https://dsa-launchpad-6-0-av2t.onrender.com/api/launchpad",
-        {
-          method: "POST",
-          body: data,
-        }
+        { method: "POST", body: data }
       );
 
       const result = await res.json();
-      alert(result.message || "Form submitted successfully!");
+
+      showAlert("success", result.message || "Form submitted successfully!");
+
+      // Reset form on success
+      setFormData({
+        fullName: "",
+        email: "",
+        mobile: "",
+        college: "",
+        branch: "",
+        year: "",
+        transactionId: "",
+        paymentScreenshot: null,
+      });
+      document.getElementById("fileLabel").textContent = "Upload Payment Screenshot";
     } catch (err) {
       console.error(err);
-      alert("Error submitting form!");
+      showAlert("error", "Error submitting form!");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-[180vh] flex items-center justify-center px-4 jakarta">
-      {" "}
-      {/* Apply font here */}
+    <div className="min-h-[180vh] flex flex-col items-center justify-center px-4 jakarta relative">
+
+      {/* Loading spinner at the center */}
+      {isLoading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="w-16 h-16 border-4 border-gray-300 border-t-amber-500 rounded-full animate-spin"></div>
+        </div>
+      )}
+
+      {/* Alert box at top */}
+     {alert.message && (
+  <div
+    className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg bg-white text-gray-800 font-semibold flex items-center space-x-3 shadow-lg p-4`}
+  >
+    {/* Icon */}
+    {alert.type === "success" ? (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-0 w-0 text-green-500"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    ) : (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6 text-red-500"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    )}
+    <span>{alert.message}</span>
+  </div>
+)}
+
+
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-lg rounded-xl p-10 space-y-10"
@@ -78,8 +141,8 @@ const RegistrationForm = () => {
           className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-400"
           placeholder="Enter your full name"
           required
+          disabled={isLoading}
         />
-
         <input
           type="email"
           name="email"
@@ -89,8 +152,8 @@ const RegistrationForm = () => {
           className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-400"
           placeholder="Enter your email"
           required
+          disabled={isLoading}
         />
-
         <input
           type="tel"
           name="mobile"
@@ -100,8 +163,8 @@ const RegistrationForm = () => {
           className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-400"
           placeholder="Enter your mobile number"
           required
+          disabled={isLoading}
         />
-
         <input
           type="text"
           name="college"
@@ -111,8 +174,8 @@ const RegistrationForm = () => {
           className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-400"
           placeholder="Enter your college"
           required
+          disabled={isLoading}
         />
-
         <input
           type="text"
           name="branch"
@@ -122,6 +185,7 @@ const RegistrationForm = () => {
           className="w-full px-4 py-3 rounded-lg bg-transparent text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-400"
           placeholder="Enter your branch"
           required
+          disabled={isLoading}
         />
 
         {/* Dropdown */}
@@ -129,29 +193,28 @@ const RegistrationForm = () => {
           value={formData.year}
           onChange={(val) => setFormData((prev) => ({ ...prev, year: val }))}
           style={{ marginBottom: "30px" }}
-          className="mb-[30px]" // same as your text inputs
+          className="mb-[30px]"
+          disabled={isLoading}
         />
 
+        {/* Payment Screenshot */}
         <div className="w-full mt-5">
           <label
             htmlFor="paymentScreenshot"
-            className="block w-full rounded-lg border border-gray-600 bg-transparent px-4 py-3 cursor-pointer focus-within:ring-2 focus-within:ring-amber-400"
+            className={`block w-full rounded-lg border border-gray-600 bg-transparent px-4 py-3 cursor-pointer focus-within:ring-2 focus-within:ring-amber-400 ${
+              isLoading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
-            {/* Text (placeholder or filename) */}
             <span
               id="fileLabel"
               className="block text-left text-gray-400 text-sm mb-3 truncate"
             >
               Upload Payment Screenshot
             </span>
-
-            {/* "Choose File" button */}
             <span className="bg-amber-500 text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-amber-600">
               Choose File
             </span>
           </label>
-
-          {/* Hidden file input */}
           <input
             id="paymentScreenshot"
             type="file"
@@ -165,6 +228,7 @@ const RegistrationForm = () => {
             }}
             className="hidden"
             required
+            disabled={isLoading}
           />
         </div>
 
@@ -175,11 +239,17 @@ const RegistrationForm = () => {
 
         {/* Submit */}
         <div className="text-center mb-16">
-          <button type="submit">
+          <button
+            type="submit"
+            disabled={isLoading}
+            className={`${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+          >
             <img
               src={submitButton}
               alt="Submit"
-              className="w-45 h-45 mx-auto cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110 active:scale-95"
+              className={`w-45 h-45 mx-auto cursor-pointer transition-transform duration-300 ease-in-out ${
+                !isLoading ? "hover:scale-110 active:scale-95" : ""
+              }`}
             />
           </button>
         </div>
