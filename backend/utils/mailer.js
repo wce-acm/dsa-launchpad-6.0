@@ -1,12 +1,28 @@
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-export const transporter = nodemailer.createTransport({
-  service: "gmail", // or use smtp
-  auth: {
-    user: process.env.EMAIL_USER, // your Gmail/SMTP email
-    pass: process.env.EMAIL_PASS, // app password (not your real Gmail password)
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+export const sendEmail = async ({ to, subject, html }) => {
+  const msg = {
+    to,
+    from: {
+      email: process.env.SENDGRID_FROM, 
+      name: "DSA Launchpad",
+    },
+    subject,
+    html,
+  };
+
+  try {
+    await sgMail.send(msg);
+    console.log("✅ Email sent successfully to", to);
+  } catch (error) {
+    console.error("❌ Error sending email:", error);
+    if (error.response) {
+      console.error(error.response.body);
+    }
   }
-});
+};
