@@ -4,6 +4,7 @@ import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 import { v2 as cloudinary } from "cloudinary";
 import { submitForm, checkEmail } from "../controllers/launchpad.controller.js";
+import { getTotalCount } from "../controllers/total_count.js"; 
 
 dotenv.config();
 
@@ -43,5 +44,7 @@ router.post(
 
 // Check email
 router.post("/check-email", checkEmail);
+
+router.get("/students", getTotalCount);
 
 export default router;

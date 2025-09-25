@@ -31,32 +31,43 @@ export const submitForm = async (req, res) => {
 
     // Send confirmation email asynchronously
     sendEmail({
-      to: formData.email,
-      subject: "Registration Successful - DSA Launchpad 6.0 🚀",
-      html: `
-        <h2>Hello ${formData.fullName},</h2>
-        <p>🎉 Thank you for registering for <b>DSA Launchpad 6.0</b>! We are excited to have you join us.</p>
+  to: formData.email,
+  subject: "Registration Successful - DSA Launchpad 6.0 🚀",
+  html: `
+    <h2>Dear Participant,</h2>
+    <p>Thank you for registering for the <b>DSA Launchpad 6.0</b>! We are excited to have you join us for an engaging and informative session on Data Structures and Algorithms.</p>
 
-        <h3>Workshop Details:</h3>
+    <h3>Workshop Details:</h3>
+    <ul>
+      <li><b>Date:</b> 11th and 12th October</li>
+      <li><b>Time:</b> 9:00 AM - 6:00 PM</li>
+      <li><b>Venue:</b> Mini CCF, Walchand College of Engineering, Sangli</li>
+    </ul>
+    <p>Please arrive 15 minutes early for registration and seating arrangements. We look forward to your active participation and hope this event will greatly enhance your understanding of DSA. Refreshments will be provided.</p>
+
+    <h3>Prerequisites:</h3>
+    <ul>
+      <li>A foundational understanding of any programming language (C, C++, or Python), including:
         <ul>
-          <li><b>Date:</b> 11th and 12th October</li>
-          <li><b>Time:</b> 9:00 AM - 6:00 PM</li>
-          <li><b>Venue:</b> Mini CCF, Walchand College of Engineering, Sangli</li>
+          <li>Data types (e.g., integers, floats, strings)</li>
+          <li>Operators (arithmetic and logical)</li>
+          <li>Control structures (loops and conditional statements)</li>
+          <li>Loops (for, while, do while)</li>
+          <li>Functions (return types, arguments)</li>
+          <li>Standard Input/Output</li>
         </ul>
+      </li>
+      <li>A laptop with your preferred coding environment (IDE, compiler, etc.). If not, PCs will be available.</li>
+    </ul>
 
-        <p>Please arrive 15 minutes early for registration and seating arrangements. Refreshments will be provided.</p>
+    <p>If you have any questions or require further information, please feel free to reach out on our Mobile No: <b>7558780903</b>.</p>
 
-        <h3>Prerequisites:</h3>
-        <ul>
-          <li>Basic knowledge of a programming language (C, C++, or Python)</li>
-          <li>Loops, Functions, I/O</li>
-        </ul>
+    <p>See you there! ✨</p>
 
-        <p>For any questions, join our WhatsApp group: <a href="https://chat.whatsapp.com/IU6yea054ODG6Gy3O6AXL7">Join Group</a></p>
+    <p>Best regards,<br/>WCE ACM Student Chapter</p>
+  `,
+})
 
-        <p>Best regards,<br/>WCE ACM Student Chapter</p>
-      `,
-    })
       .then(() => {
         console.log("📧 Confirmation email sent successfully to ${formData.email} ✅");
       })
