@@ -49,6 +49,11 @@ const RegistrationForm = () => {
         { method: "POST", body: data }
       );
 
+      //  const res = await fetch(
+      //   "http://localhost:5000/api/launchpad",
+      //   { method: "POST", body: data }
+      // );
+
       const result = await res.json();
 
       showAlert("success", result.message || "Form submitted successfully!");
