@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Gallary from "./components/Gallary";
 import EventSpotlight from "./components/Event";
 import Loader from "./components/ui/Loader"; // <-- Import the new Loader
-
+import RegistrationSection from "./components/RegistrationSection";
 function App() {
   const registrationRef = useRef(null);
   const [loading, setLoading] = useState(true);
@@ -65,6 +65,10 @@ function App() {
           <div ref={registrationRef}>
             <RegistrationForm />
           </div>
+          <RegistrationSection
+        formLink="https://forms.gle/f8od9FdNBeUcgHnK8"
+        message="Also fill the below form to register and secure your spot."
+      />
         </Background>
       </div>
       <Footer />
