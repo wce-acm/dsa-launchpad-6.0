@@ -102,7 +102,7 @@ const Landing = ({ onRegisterClick }) => {
         </div>
 
         {/* Register Button */}
-        <HoverBorderGradientDemo onClick={onRegisterClick} />
+        {/* <HoverBorderGradientDemo onClick={onRegisterClick} /> */}
       </div>
     </div>
   );

@@ -13,6 +13,7 @@ import EventSpotlight from "./components/Event";
 import Loader from "./components/ui/Loader";
 import RegistrationSection from "./components/RegistrationSection";
 import StudentDashboard from "./components/StudentDashboard"; // 👈 Add this
+import RegistrationClosed from "./components/RegistrationClosed";
 
 function App() {
   const registrationRef = useRef(null);
@@ -53,12 +54,13 @@ function App() {
                       registrationRef.current?.scrollIntoView({ behavior: "smooth" })
                     }
                   />
+                  <RegistrationClosed/>
                   <SessionCard />
                   <EventSpotlight mt-16 />
                   <Gallary />
-                  <div ref={registrationRef}>
+                  {/* <div ref={registrationRef}>
                     <RegistrationForm />
-                  </div>
+                  </div> */}
                   {/* <RegistrationSection
                     formLink="https://forms.gle/f8od9FdNBeUcgHnK8"
                     message="Also fill the below form to register and secure your spot."
